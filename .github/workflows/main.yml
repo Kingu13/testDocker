@@ -1,22 +1,25 @@
-name: Build and Push Docker image to Docker Hub
+name: Docker Publish
 
-on: push
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-      
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
       - name: Login to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-    
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: kingu13/testdocker
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Publish Docker Image
+        run: |
+          docker build -t kingu13/testdocker:latest .
+          docker push kingu13/testdocker:latest
