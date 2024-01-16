@@ -5,4 +5,4 @@ WORKDIR /app
 COPY . .
 
 
-CMD ["dotnet", "/PersonnummerKontrollApp.dll"]
+CMD ["dotnet", "PersonnummerKontrollApp.dll"]
