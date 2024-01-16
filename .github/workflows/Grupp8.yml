@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile  # Assuming Dockerfile is in the root directory
+          file: Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: kingu13/testdocker:latest
