@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 # Copy only the project file to the working directory
-COPY PersonnummerKontrollApp/PersonnummerValidator.csproj .
+COPY PersonnummerKontrollApp/PersonnummerKontrollApp.csproj .
 
 # Restore NuGet packages
 RUN dotnet restore
@@ -16,4 +16,4 @@ COPY . .
 RUN dotnet build -c Release -o out
 
 # Run the application
-CMD ["dotnet", "run", "--project", "PersonnummerKontrollApp/PersonnummerValidator.csproj"]
+CMD ["dotnet", "run", "--project", "PersonnummerKontrollApp/PersonnummerKontrollApp.csproj"]
