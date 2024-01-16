@@ -4,6 +4,5 @@ WORKDIR /app
 
 COPY . .
 
-RUN dotnet build -c Release -o out
 
-CMD ["dotnet", "out/PersonnummerKontrollApp.dll"]
+CMD ["dotnet", "/PersonnummerKontrollApp.dll"]
