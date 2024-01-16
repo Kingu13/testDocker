@@ -2,6 +2,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 
 WORKDIR /app
 
-COPY ./bin/Debug/net8.0/ .
+COPY . .
 
-CMD ["dotnet", "PersonnummerKontrollApp.dll"]
+RUN dotnet build -c Release -o out
+
+CMD ["dotnet", "out/PersonnummerKontrollApp.dll"]
