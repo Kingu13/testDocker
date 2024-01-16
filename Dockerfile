@@ -1,15 +1,14 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-personnummer
+# Use the .NET SDK image for building
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 
 WORKDIR /app
 
-COPY ./bin/Debug/net8.0/ .
+# Copy the entire project folder
+COPY . .
 
-CMD ["dotnet", "PersonnummerKontrollApp.dll"]
+# Build the application
+RUN dotnet restore
+RUN dotnet build -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-test
-
-WORKDIR /app
-
-COPY ./bin/Debug/net8.0/ .
-
-CMD ["dotnet", "TestPersonnummer.dll"]
+# Run the application
+CMD ["dotnet", "run", "--project", "PersonnummerKontrollApp/PersonnummerValidator.cs"]
