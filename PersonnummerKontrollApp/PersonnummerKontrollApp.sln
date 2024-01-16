@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonnummerKontrollApp", "PersonnummerKontrollApp.csproj", "{9BC88BF8-D3EE-4AE0-8160-9CB97DC77CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPersonnummer", "..\TestPersonnummer\TestPersonnummer.csproj", "{8F064400-277A-4C7B-8539-C1A3EADC91B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BC88BF8-D3EE-4AE0-8160-9CB97DC77CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC88BF8-D3EE-4AE0-8160-9CB97DC77CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC88BF8-D3EE-4AE0-8160-9CB97DC77CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC88BF8-D3EE-4AE0-8160-9CB97DC77CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F064400-277A-4C7B-8539-C1A3EADC91B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F064400-277A-4C7B-8539-C1A3EADC91B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F064400-277A-4C7B-8539-C1A3EADC91B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F064400-277A-4C7B-8539-C1A3EADC91B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA88CE20-B021-4A5C-8C69-1C579F16E127}
+	EndGlobalSection
+EndGlobal
