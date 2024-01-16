@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY ./bin/Debug/net8.0/ .
 
-CMD ["dotnet", "PersonnummerValidator.dll"]
+CMD ["dotnet", "PersonnummerKontrollApp.dll"]
