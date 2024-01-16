@@ -1,4 +1,4 @@
-name: Publish Docker Image
+name: Grupp8 Docker Image
 
 on:
   push:
