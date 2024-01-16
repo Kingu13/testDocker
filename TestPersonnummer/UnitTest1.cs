@@ -1,11 +1,8 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
-
 [TestFixture]
 public class TestPersonnummer
 { 
-
-
     [TestCase("920101-1234")]
     [TestCase("850214-5678")]
     [TestCase("990630-9876")]
