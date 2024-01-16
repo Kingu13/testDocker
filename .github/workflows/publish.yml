@@ -1,31 +1,31 @@
-name: Publish Docker image 
+name: Publish Docker Image
 
 on:
   push:
     branches:
       - main
-          
+
 jobs:
   build:
     runs-on: ubuntu-latest
-          
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-          
+
       - name: Set up .net
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.x'
-          
+
       - name: Restore and build
         run: |
           dotnet restore
           dotnet build
-          
+
       - name: Login to Docker hub
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       - name: Build and push Docker image
         run: |
           docker build -t kingu13/testdocker .
