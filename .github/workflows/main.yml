@@ -1,4 +1,4 @@
-name: Build and Push Docker image to Docker Hub
+name: Publish Docker Image
 
 on:
   push:
@@ -6,23 +6,27 @@ on:
       - main
 
 jobs:
-  build_and_push:
-    name: Build and Push
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
+      - name: Set up .net
+        uses: actions/setup-dotnet@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          dotnet-version: '6.x'
 
-      - name: Build and Push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: kingu13/testdocker:latest
+      - name: Restore and build
+        run: |
+          dotnet restore
+          dotnet build
+
+      - name: Login to Docker hub
+        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t kingu13/testdocker .
+          docker push kingu13/testdocker
